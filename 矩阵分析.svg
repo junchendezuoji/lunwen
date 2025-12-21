@@ -1,0 +1,114 @@
+<svg width="1000" height="900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font:  bold 24px 'Microsoft YaHei', 'SimHei', sans-serif; }
+      .quadrant-title { font: bold 18px 'Microsoft YaHei', 'SimHei', sans-serif; }
+      .stakeholder-text { font: 14px 'Microsoft YaHei', 'SimHei', sans-serif; }
+      . axis-label { font: bold 16px 'Microsoft YaHei', 'SimHei', sans-serif; }
+      .axis-text { font: 14px 'Microsoft YaHei', 'SimHei', sans-serif; }
+    </style>
+    <!-- 阴影效果 -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 白色背景 -->
+  <rect width="1000" height="900" fill="white"/>
+  
+  <!-- 标题 -->
+  <text x="500" y="40" text-anchor="middle" class="title" fill="#000000">图2-1 利益相关者权力-利益矩阵</text>
+  
+  <!-- 象限背景（带阴影） -->
+  <!-- 左上：管理满意（浅橙） -->
+  <rect x="120" y="80" width="380" height="380" 
+        fill="#FFE4C4" stroke="#FF8C00" stroke-width="3" 
+        filter="url(#shadow)"/>
+  
+  <!-- 右上：重点管理（浅绿） -->
+  <rect x="500" y="80" width="380" height="380" 
+        fill="#D4EDDA" stroke="#28A745" stroke-width="3" 
+        filter="url(#shadow)"/>
+  
+  <!-- 左下：保持了解（浅灰） -->
+  <rect x="120" y="460" width="380" height="380" 
+        fill="#E8E8E8" stroke="#6C757D" stroke-width="3" 
+        filter="url(#shadow)"/>
+  
+  <!-- 右下：监督关注（浅蓝） -->
+  <rect x="500" y="460" width="380" height="380" 
+        fill="#D1ECF1" stroke="#17A2B8" stroke-width="3" 
+        filter="url(#shadow)"/>
+  
+  <!-- 中心分界线（加粗） -->
+  <line x1="120" y1="460" x2="880" y2="460" 
+        stroke="#000000" stroke-width="3"/>
+  <line x1="500" y1="80" x2="500" y2="840" 
+        stroke="#000000" stroke-width="3"/>
+  
+  <!-- 象限标题 -->
+  <text x="310" y="115" text-anchor="middle" class="quadrant-title" fill="#D2691E">管理满意</text>
+  <text x="690" y="115" text-anchor="middle" class="quadrant-title" fill="#228B22">重点管理</text>
+  <text x="310" y="495" text-anchor="middle" class="quadrant-title" fill="#696969">保持了解</text>
+  <text x="690" y="495" text-anchor="middle" class="quadrant-title" fill="#1E90FF">监督关注</text>
+  
+  <!-- 坐标轴标签 -->
+  <!-- 底部横轴 -->
+  <text x="500" y="870" text-anchor="middle" class="axis-label" fill="#000000">
+    权力（影响力）→
+  </text>
+  <text x="140" y="870" text-anchor="middle" class="axis-text" fill="#666666">低</text>
+  <text x="860" y="870" text-anchor="middle" class="axis-text" fill="#666666">高</text>
+  
+  <!-- 左侧纵轴 -->
+  <text x="60" y="470" text-anchor="middle" class="axis-label" fill="#000000" 
+        transform="rotate(-90 60 470)">
+    ↑ 利益（关注度）
+  </text>
+  <text x="95" y="820" text-anchor="middle" class="axis-text" fill="#666666">低</text>
+  <text x="95" y="100" text-anchor="middle" class="axis-text" fill="#666666">高</text>
+  
+  <!-- 利益相关者标注 -->
+  <!-- 右上：重点管理 -->
+  <circle cx="780" cy="180" r="10" fill="#DC3545" stroke="#ffffff" stroke-width="2"/>
+  <text x="780" y="210" text-anchor="middle" class="stakeholder-text" fill="#000000">实验室管理方</text>
+  
+  <circle cx="720" cy="280" r="10" fill="#DC3545" stroke="#ffffff" stroke-width="2"/>
+  <text x="720" y="310" text-anchor="middle" class="stakeholder-text" fill="#000000">监管部门</text>
+  
+  <!-- 左上：管理满意 -->
+  <circle cx="240" cy="200" r="10" fill="#DC3545" stroke="#ffffff" stroke-width="2"/>
+  <text x="240" y="230" text-anchor="middle" class="stakeholder-text" fill="#000000">实验操作人员</text>
+  
+  <circle cx="200" cy="300" r="10" fill="#DC3545" stroke="#ffffff" stroke-width="2"/>
+  <text x="200" y="330" text-anchor="middle" class="stakeholder-text" fill="#000000">技术团队</text>
+  
+  <circle cx="400" cy="350" r="10" fill="#DC3545" stroke="#ffffff" stroke-width="2"/>
+  <text x="400" y="380" text-anchor="middle" class="stakeholder-text" fill="#000000">设备维护人员</text>
+  
+  <!-- 右下：监督关注 -->
+  <circle cx="740" cy="650" r="10" fill="#DC3545" stroke="#ffffff" stroke-width="2"/>
+  <text x="740" y="680" text-anchor="middle" class="stakeholder-text" fill="#000000">设备供应商</text>
+  
+  <circle cx="760" cy="770" r="10" fill="#DC3545" stroke="#ffffff" stroke-width="2"/>
+  <text x="760" y="800" text-anchor="middle" class="stakeholder-text" fill="#000000">后勤保障部门</text>
+  
+  <!-- 左下：保持了解 -->
+  <circle cx="270" cy="660" r="10" fill="#DC3545" stroke="#ffffff" stroke-width="2"/>
+  <text x="270" y="690" text-anchor="middle" class="stakeholder-text" fill="#000000">科研用户</text>
+  
+  <circle cx="200" cy="780" r="10" fill="#DC3545" stroke="#ffffff" stroke-width="2"/>
+  <text x="200" y="810" text-anchor="middle" class="stakeholder-text" fill="#000000">外部专家</text>
+  
+  <!-- 外边框 -->
+  <rect x="120" y="80" width="760" height="760" 
+        fill="none" stroke="#000000" stroke-width="3"/>
+</svg>
